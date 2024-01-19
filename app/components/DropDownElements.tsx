@@ -42,11 +42,11 @@ const DropDownElements = ({ dataa }: any) => {
       ))} */}
       <Menubar className="gap-10">
         {dataa?.map((d: any, index: number) => (
-          <MenubarMenu className="cursor-pointer ">
+          <MenubarMenu key={index} className="cursor-pointer ">
             <MenubarTrigger className="cursor-pointer">{d?.name}</MenubarTrigger>
             <MenubarContent>
               {d?.childcategories?.catname?.map((c: any, index: number) => (
-                <MenubarItem className="cursor-pointer">
+                <MenubarItem key={index} className="cursor-pointer">
                   <a className="text-black" href={`/${c}`}>
                     {c}
                   </a>
