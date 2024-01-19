@@ -13,14 +13,7 @@ export interface ProductCart {
   price_id: string;
 }
 
-export default function AddToBag({
-  currency,
-  description,
-  image,
-  name,
-  price,
-  price_id,
-}: ProductCart) {
+export default function AddToBag({ currency, description, image, name, price, price_id }: ProductCart) {
   const { addItem, handleCartClick } = useShoppingCart();
 
   const product = {
@@ -37,7 +30,7 @@ export default function AddToBag({
         addItem(product), handleCartClick();
       }}
     >
-      Add To Cart
+      Get Quote
     </Button>
   );
 }

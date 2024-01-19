@@ -1,7 +1,8 @@
 import AddToBag from "@/app/components/AddToBag";
 import CheckoutNow from "@/app/components/CheckoutNow";
 import ImageGallery from "@/app/components/ImageGallery";
-import { fullProduct } from "@/app/interface";
+import SizesDesc from "@/app/components/SizesDesc";
+
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
@@ -14,6 +15,7 @@ async function getData(slug: string) {
           name,
           description,
           "slug": slug.current,
+          sizes,
           "categoryName": category->name,
           price_id
       }`;
@@ -25,12 +27,16 @@ async function getData(slug: string) {
 
 export const dynamic = "force-dynamic";
 
-export default async function ProductPge({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const data: fullProduct = await getData(params.slug);
+export default async function ProductPge({ params }: { params: { slug: string } }) {
+
+
+  const data: any = await getData(params.slug);
+  console.error(data);
+
+  // let sizeIndex: number = 0;
+  // const setIndex = (index: number) => {
+  //   sizeIndex = index;
+  // };
 
   return (
     <div className="bg-white">
@@ -40,12 +46,8 @@ export default async function ProductPge({
 
           <div className="md:py-8">
             <div className="mb-2 md:mb-3">
-              <span className="mb-0.5 inline-block text-gray-500">
-                {data.categoryName}
-              </span>
-              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
-                {data.name}
-              </h2>
+              <span className="mb-0.5 inline-block text-gray-500">{data.categoryName}</span>
+              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">{data.name}</h2>
             </div>
 
             <div className="mb-6 flex items-center gap-3 md:mb-10">
@@ -54,30 +56,23 @@ export default async function ProductPge({
                 <Star className="h-5 w-5" />
               </Button>
 
-              <span className="text-sm text-gray-500 transition duration-100">
-                56 Ratings
-              </span>
+              <span className="text-sm text-gray-500 transition duration-100">56 Ratings</span>
             </div>
 
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <div className="flex items-end gap-2">
-                <span className="text-xl font-bold text-gray-800 md:text-2xl">
-                  ${data.price}
-                </span>
-                <span className="mb-0.5 text-red-500 line-through">
-                  ${data.price + 30}
-                </span>
+                <span className="text-xl font-bold text-gray-800 md:text-2xl">${data.price}</span>
+                <span className="mb-0.5 text-red-500 line-through">${data.price + 30}</span>
               </div>
 
-              <span className="text-sm text-gray-500">
-                Incl. Vat plus shipping
-              </span>
-            </div>
+              <span className="text-sm text-gray-500">Incl. Vat plus shipping</span>
+            </div> */}
 
             <div className="mb-6 flex items-center gap-2 text-gray-500">
               <Truck className="w-6 h-6" />
               <span className="text-sm">2-4 Day Shipping</span>
             </div>
+            <SizesDesc sizeData={data?.sizes} />
 
             <div className="flex gap-2.5">
               <AddToBag
@@ -99,12 +94,9 @@ export default async function ProductPge({
                 price_id={data.price_id}
               />
             </div>
-
-            <p className="mt-12 text-base text-gray-500 tracking-wide">
-              {data.description}
-            </p>
           </div>
         </div>
+        <p className="mt-4 w-full text-base text-gray-500 tracking-wide">{data.description}</p>
       </div>
     </div>
   );

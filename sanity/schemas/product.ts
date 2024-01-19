@@ -12,12 +12,34 @@ export default {
       name: 'images',
       type: 'array',
       title: 'Product Images',
-      of: [{type: 'image'}],
+      of: [{ type: 'image' }],
     },
     {
       name: 'description',
       type: 'text',
       title: 'Description of product',
+    },
+    {
+      name: 'sizes',
+      title: 'Sizes',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'size',
+              title: 'Size',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'slug',
