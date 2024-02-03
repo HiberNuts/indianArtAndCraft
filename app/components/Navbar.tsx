@@ -5,10 +5,17 @@ import { useShoppingCart } from "use-shopping-cart";
 import { DropdownMeu } from "./NavDropDown";
 import PathMenu from "./PathMenu";
 
+const menus = [
+  { title: "Home", path: "/your-path" },
+  { title: "Blog", path: "/your-path" },
+  { title: "About Us", path: "/your-path" },
+  { title: "Contact Us", path: "/your-path" },
+];
+
 export default function Navbar() {
   // const { handleCartClick } = useShoppingCart();
   return (
-    <div className="h-20 mt-10  border-b">
+    <div className="h-20 mt-10 border-b">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
           <h1 className="text-2xl md:text-4xl font-bold">

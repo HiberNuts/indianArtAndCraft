@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const SizesDesc = ({ sizeData }: any) => {
   const [Index, setIndex] = useState(0);
+  
   return (
     <div className="flex flex-col justify-evenly w-full mb-2">
       <p className="text-l font-bold text-gray-800 md:text-xl mb-1">Our Sizes in inches</p>

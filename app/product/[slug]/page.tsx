@@ -6,6 +6,7 @@ import SizesDesc from "@/app/components/SizesDesc";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
+import { useState } from "react";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -28,20 +29,13 @@ async function getData(slug: string) {
 export const dynamic = "force-dynamic";
 
 export default async function ProductPge({ params }: { params: { slug: string } }) {
-
-
   const data: any = await getData(params.slug);
   console.error(data);
-
-  // let sizeIndex: number = 0;
-  // const setIndex = (index: number) => {
-  //   sizeIndex = index;
-  // };
 
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid mt-4 gap-8 md:grid-cols-2">
           <ImageGallery images={data.images} />
 
           <div className="md:py-8">
@@ -68,14 +62,15 @@ export default async function ProductPge({ params }: { params: { slug: string } 
               <span className="text-sm text-gray-500">Incl. Vat plus shipping</span>
             </div> */}
 
-            <div className="mb-6 flex items-center gap-2 text-gray-500">
+            {/* <div className="mb-6 flex items-center gap-2 text-gray-500">
               <Truck className="w-6 h-6" />
               <span className="text-sm">2-4 Day Shipping</span>
-            </div>
+            </div> */}
             <SizesDesc sizeData={data?.sizes} />
 
             <div className="flex gap-2.5">
               <AddToBag
+                sizeData={data?.sizes}
                 currency="USD"
                 description={data.description}
                 image={data.images[0]}
@@ -84,7 +79,7 @@ export default async function ProductPge({ params }: { params: { slug: string } 
                 key={data._id}
                 price_id={data.price_id}
               />
-              <CheckoutNow
+              {/* <CheckoutNow
                 currency="USD"
                 description={data.description}
                 image={data.images[0]}
@@ -92,7 +87,7 @@ export default async function ProductPge({ params }: { params: { slug: string } 
                 price={data.price}
                 key={data._id}
                 price_id={data.price_id}
-              />
+              /> */}
             </div>
           </div>
         </div>

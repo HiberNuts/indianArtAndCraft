@@ -24,7 +24,7 @@ export default function ImageGallery({ images }: iAppProps) {
               width={200}
               height={200}
               alt="photo"
-              className="h-full w-full object-cover object-center cursor-pointer"
+              className="h-full w-full object-cover object-center cursor-pointer border-purple-400"
               onClick={() => handleSmallImageClick(image)}
             />
           </div>
@@ -37,7 +37,7 @@ export default function ImageGallery({ images }: iAppProps) {
           alt="Photo"
           width={500}
           height={500}
-          className="h-[500px] w-[500px] rounded-lg object-cover object-center"
+          className="h-[500px] w-[500px] rounded-lg object-cover object-center border-2"
         />
       </div>
     </div>
