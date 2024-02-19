@@ -50,7 +50,7 @@ const DropDownElements = ({ dataa }: any) => {
           ))}
         </DropdownMenu>
       ))} */}
-      <Menubar className="sm:hidden md:flex py-6 border-purple-500">
+      <Menubar className="hidden md:flex py-6 border-purple-500">
         {dataa?.map((d: any, index: number) => (
           <MenubarMenu key={index}>
             <MenubarTrigger>

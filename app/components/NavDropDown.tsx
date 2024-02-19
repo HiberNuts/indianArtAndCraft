@@ -12,7 +12,6 @@ import DropDownElements from "./DropDownElements";
 async function getData() {
   const query = `*[_type == 'mastercategory']`;
   const data = await client.fetch(query);
-  console.log(data);
 
   return data;
 }

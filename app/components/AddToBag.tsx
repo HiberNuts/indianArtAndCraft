@@ -42,7 +42,6 @@ export default function AddToBag({ currency, description, image, name, price, pr
   const [buttonText, setbuttonText] = useState("Submit");
   const [number, setnumber] = useState("");
 
-  console.log(sizeData);
 
   const sendEnquery = () => {
     const doc = {
@@ -55,7 +54,6 @@ export default function AddToBag({ currency, description, image, name, price, pr
       number: number,
     };
     client.create(doc).then((res) => {
-      console.log(res);
 
       setbuttonText("Inquiry Sent, Thank you!");
       setemail("");
