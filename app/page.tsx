@@ -97,7 +97,7 @@ export default async function Home() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-white">Fast and Reliable Shipping</h3>
               <p className="text-white">
-                We understand that you're eager to receive your new chess board, which is why we prioritize fast and
+                We understand that youre eager to receive your new chess board, which is why we prioritize fast and
                 reliable shipping. With our streamlined shipping process and efficient delivery partners, you can expect
                 your order to arrive promptly and in pristine condition, ready for your next game.
               </p>
@@ -118,8 +118,8 @@ export default async function Home() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-white">Competitive Pricing</h3>
               <p className="text-white">
-                Despite our unwavering commitment to quality, we believe that luxury shouldn't come with a luxury price
-                tag. That's why we offer competitive pricing on all of our chess boards, ensuring that exceptional
+                Despite our unwavering commitment to quality, we believe that luxury shouldnt come with a luxury price
+                tag. Thats why we offer competitive pricing on all of our chess boards, ensuring that exceptional
                 craftsmanship
               </p>
             </div>
@@ -137,7 +137,7 @@ export default async function Home() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-white">Customization Options</h3>
               <p className="text-white">
-                Make your chess board truly one-of-a-kind with our customization options. Whether you're commemorating a
+                Make your chess board truly one-of-a-kind with our customization options. Whether youre commemorating a
                 special occasion, personalizing a gift, or simply adding a unique touch to your own board
               </p>
             </div>
