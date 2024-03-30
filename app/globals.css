@@ -58,3 +58,8 @@
   }
 }
 
+.india {
+  background: linear-gradient(180deg, #f15b25 0%, #ffffff 50%, #006934 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -37,7 +37,7 @@ export default function ImageGallery({ images }: iAppProps) {
           alt="Photo"
           width={500}
           height={500}
-          className="h-[500px] w-[500px] rounded-lg object-cover object-center border-2"
+          className="h-[500px] w-[500px] rounded-lg sm:object-cover object-contain object-center border-2"
         />
       </div>
     </div>
