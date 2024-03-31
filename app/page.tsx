@@ -43,7 +43,6 @@ export default async function Home() {
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Why choose us?
             </h2>
-            
           </div>
           <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 justify-center align-middle">
             <div className="bg-primary rounded-lg p-4 text-white">
@@ -97,9 +96,9 @@ export default async function Home() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-white">Fast and Reliable Shipping</h3>
               <p className="text-white">
-                We understand that youre eager to receive your new chess board, which is why we prioritize fast and
-                reliable shipping. With our streamlined shipping process and efficient delivery partners, you can expect
-                your order to arrive promptly and in pristine condition, ready for your next game.
+                We understand that you&lsquo;re eager to receive you&lsquo;r new chess board, which is why we prioritize
+                fast and reliable shipping. With our streamlined shipping process and efficient delivery partners, you
+                can expect your order to arrive promptly and in pristine condition, ready for you&lsquo;r next game.
               </p>
             </div>
             <div className="bg-primary rounded-lg p-4 text-white">
@@ -119,8 +118,8 @@ export default async function Home() {
               <h3 className="mb-2 text-xl font-bold text-white">Competitive Pricing</h3>
               <p className="text-white">
                 Despite our unwavering commitment to quality, we believe that luxury shouldnt come with a luxury price
-                tag. Thats why we offer competitive pricing on all of our chess boards, ensuring that exceptional
-                craftsmanship
+                tag. That&apos;s why we offer competitive pricing on all of our chess boards, ensuring that exceptional
+                craftsmanship.
               </p>
             </div>
             <div className="bg-primary rounded-lg p-4 text-white">
@@ -137,8 +136,9 @@ export default async function Home() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-white">Customization Options</h3>
               <p className="text-white">
-                Make your chess board truly one-of-a-kind with our customization options. Whether youre commemorating a
-                special occasion, personalizing a gift, or simply adding a unique touch to your own board
+                Make your chess board truly one-of-a-kind with our customization options. Whether you&apos;re
+                commemorating a special occasion, personalizing a gift, or simply adding a unique touch to your own
+                board.
               </p>
             </div>
             <div className="bg-primary rounded-lg p-4 text-white">
@@ -169,45 +169,6 @@ export default async function Home() {
         </div>
       </section>
       <SwiperGallery data={data} />
-      <Footer style={{ backgroundColor: "#7c3aed" }} container>
-        <div className="w-full bg-primary !text-white">
-          <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-            <div>
-             
-              <h1 className="text-2xl text-white md:text-4xl font-bold">
-                India Art <span className="india">& Craft</span>
-              </h1>
-            </div>
-            <div className="grid grid-cols-2 justify-between gap-8 sm:mt-4 text-white sm:grid-cols-3 sm:gap-6">
-              <div>
-                <FooterTitle style={{ color: "white" }} title="Contact Us" />
-                <FooterLinkGroup col>
-                  <FooterLink style={{ color: "white" }} href="tel:+919915907188">
-                    +91 9915907188
-                  </FooterLink>
-                  <FooterLink style={{ color: "white" }} href="mailto:info@indiaartandcraft.com">
-                    info@indiaartandcraft.com
-                  </FooterLink>
-                </FooterLinkGroup>
-              </div>
-
-              <div>
-                <FooterTitle style={{ color: "white" }} title="Address" />
-                <FooterLinkGroup col>
-                  <FooterLink style={{ color: "white" }} href="#">
-                    Sultanwind road, Amritsar.
-                  </FooterLink>
-                  {/* <FooterLink href="#">Terms &amp; Conditions</FooterLink> */}
-                </FooterLinkGroup>
-              </div>
-            </div>
-          </div>
-          <FooterDivider />
-          <div style={{ color: "white" }} className="w-full  sm:flex sm:items-center sm:justify-between">
-            <FooterCopyright style={{ color: "white" }} href="#" by="Indiaartandcraft" year={2024} />
-          </div>
-        </div>
-      </Footer>
     </div>
   );
 }

@@ -18,8 +18,8 @@ export default function Navbar() {
     <div className="flex justify-between w-full  bg-primary py-6">
       <div className="flex items-center w-full  justify-between px-4 ">
         <Link href="/">
-          <h1 className="text-2xl text-white md:text-4xl font-bold">
-            India Art <span className="text-primary india">& Craft</span>
+          <h1 className="text-2xl text-white md:text-4xl font-bold india">
+            India Art <span className="text-primary ">& Craft</span>
           </h1>
         </Link>
         <DropdownMeu />
