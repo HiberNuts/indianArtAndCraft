@@ -7,21 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 
 import {
   Drawer,
@@ -33,40 +19,37 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import Link from "next/link";
 
 const DropDownElements = ({ dataa }: any) => {
   return (
     <div className="flex justify-center align-middle w-full ">
-      {/* {dataa?.map((d: any, index: number) => (
-        <DropdownMenu key={index}>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">{d?.name}</Button>
-          </DropdownMenuTrigger>
-          {d?.childcategories?.catname?.map((c: any, index: number) => (
-            <DropdownMenuContent key={index} className="w-56">
-              <DropdownMenuLabel>{c}</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-            </DropdownMenuContent>
-          ))}
-        </DropdownMenu>
-      ))} */}
       <Menubar className="hidden md:flex py-6 border-purple-500">
-        {dataa?.map((d: any, index: number) => (
-          <MenubarMenu key={index}>
-            <MenubarTrigger>
-              <span className="cursor-pointer ">{d?.name}</span>
-            </MenubarTrigger>
-            <MenubarContent className="border-b-purple-500 border-l-purple-500 border-r-purple-500">
-              {d?.childcategories?.catname?.map((c: any, index: number) => (
-                <MenubarItem key={index}>
-                  <a className="text-black cursor-pointer hover:text-purple-400" href={`/${c}`}>
-                    {c}
-                  </a>
-                </MenubarItem>
-              ))}
-            </MenubarContent>
-          </MenubarMenu>
-        ))}
+        <MenubarMenu>
+          <MenubarTrigger>
+            <Link href={`/all`} className="cursor-pointer ">
+              All
+            </Link>
+          </MenubarTrigger>
+        </MenubarMenu>
+        <>
+          {dataa?.map((d: any, index: number) => (
+            <MenubarMenu key={index}>
+              <MenubarTrigger>
+                <span className="cursor-pointer ">{d?.name}</span>
+              </MenubarTrigger>
+              <MenubarContent className="border-b-purple-500 border-l-purple-500 border-r-purple-500">
+                {d?.childcategories?.catname?.map((c: any, index: number) => (
+                  <MenubarItem key={index}>
+                    <a className="text-black cursor-pointer hover:text-purple-400" href={`/${c}`}>
+                      {c}
+                    </a>
+                  </MenubarItem>
+                ))}
+              </MenubarContent>
+            </MenubarMenu>
+          ))}
+        </>
       </Menubar>
       <div className="md:hidden flex justify-center align-middle ">
         <Drawer>

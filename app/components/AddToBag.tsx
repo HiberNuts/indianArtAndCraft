@@ -152,24 +152,7 @@ export default function AddToBag({ currency, description, image, name, price, pr
           </Select>
           <DialogFooter className="flex justify-evenly flex-wrap w-full ">
             <Button onClick={sendEnquery}>{buttonText}</Button>
-            {/* <a
-              target="_blank"
-              aria-label="Chat on WhatsApp"
-              href={`https://wa.me/+919915907188?text=Hey there \n I'am intrested in ${name} of size ${size}`}
-            >
-              {" "}
-              <img
-                className="h-14 w-50 cursor-pointer hover:scale-110"
-                alt="Chat on WhatsApp"
-                src="https://static.xx.fbcdn.net/assets/?revision=368225889292641&name=platform-agnostic-green-medium-en-us&density=1"
-              />
-            </a> */}
-
-            {/* <img
-            className="h-14 w-50 cursor-pointer hover:scale-110"
-            src="https://static.xx.fbcdn.net/assets/?revision=368225889292641&name=platform-agnostic-green-medium-en-us&density=1"
-          /> */}
-            {/* <Button type="submit">Save changes</Button> */}
+           
           </DialogFooter>
         </DialogContent>
       </Dialog>
