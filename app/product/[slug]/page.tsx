@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { PortableText } from "@portabletext/react";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -17,12 +18,12 @@ async function getData(slug: string) {
           description,
           "slug": slug.current,
           sizes,
+          content,
           "categoryName": category->name,
           price_id
       }`;
 
   const data = await client.fetch(query);
-
   return data;
 }
 
@@ -46,6 +47,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ProductPge({ params }: { params: { slug: string } }) {
   const data: any = await getData(params.slug);
+  // console.log(data.content);
 
   const Relateddata: simplifiedProduct[] = await getRelatedData();
 
@@ -62,7 +64,6 @@ export default async function ProductPge({ params }: { params: { slug: string } 
               <span className="mb-0.5 inline-block text-gray-500">{data?.categoryName}</span>
               <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">{data?.name}</h2>
             </div>
-
             <div className="mb-6 flex items-center gap-3 md:mb-10">
               <Button className="rounded-full gap-x-2">
                 <span className="text-sm">{x}</span>
@@ -85,19 +86,12 @@ export default async function ProductPge({ params }: { params: { slug: string } 
                 key={data._id}
                 price_id={data.price_id}
               />
-              {/* <CheckoutNow
-                currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              /> */}
             </div>
           </div>
         </div>
-        <p className="mt-4 w-full text-base text-gray-500 tracking-wide">{data.description}</p>
+        {/* <p className="mt-4 w-full text-base text-gray-500 tracking-wide">{data.description}</p> */}
+
+        <PortableText value={data?.content} />
       </div>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center">

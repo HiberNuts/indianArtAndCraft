@@ -20,6 +20,13 @@ export default {
       title: 'Description of product',
     },
     {
+      name: "content",
+      title: "Content",
+      type: 'array',
+      of: [{ type: 'block' }],
+      default: ["hi"]
+    },
+    {
       name: 'sizes',
       title: 'Sizes',
       type: 'array',
