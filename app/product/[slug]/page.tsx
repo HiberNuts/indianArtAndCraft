@@ -127,7 +127,6 @@ export default async function ProductPge({ params }: { params: { slug: string } 
               <AddToBag
                 sizeData={data?.sizes}
                 currency="USD"
-                description={data.description}
                 image={data.images[0]}
                 name={data.name}
                 price={data.price}
@@ -138,8 +137,9 @@ export default async function ProductPge({ params }: { params: { slug: string } 
           </div>
         </div>
         {/* <p className="mt-4 w-full text-base text-gray-500 tracking-wide">{data.description}</p> */}
-
-        <PortableText components={components} listNestingMode="direct" value={data?.content} />
+        <div className="mt-8">
+          <PortableText components={components} listNestingMode="direct" value={data?.content} />
+        </div>
       </div>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center">

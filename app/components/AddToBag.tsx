@@ -33,7 +33,7 @@ export interface ProductCart {
   price_id: string;
 }
 
-export default function AddToBag({ currency, description, image, name, price, price_id, sizeData }: any) {
+export default function AddToBag({ currency, image, name, price, price_id, sizeData }: any) {
   const { addItem, handleCartClick } = useShoppingCart();
   const [userName, setuserName] = useState("");
   const [email, setemail] = useState("");

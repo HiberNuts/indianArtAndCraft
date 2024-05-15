@@ -14,11 +14,11 @@ export default {
       title: 'Product Images',
       of: [{ type: 'image' }],
     },
-    {
-      name: 'description',
-      type: 'text',
-      title: 'Description of product',
-    },
+    // {
+    //   name: 'description',
+    //   type: 'text',
+    //   title: 'Description of product',
+    // },
     {
       name: "content",
       title: "Content",
@@ -43,6 +43,12 @@ export default {
               name: 'description',
               title: 'Description',
               type: 'text',
+            },
+            {
+              name: "content",
+              title: "Content",
+              type: 'array',
+              of: [{ type: 'block' }],
             },
           ],
         },
