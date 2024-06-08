@@ -3,6 +3,8 @@ import { simplifiedProduct } from "../interface";
 import { client } from "../lib/sanity";
 import Image from "next/image";
 
+
+
 async function getData(cateogry: string) {
   if (cateogry == "all") {
     const query = `*[_type == "product"] | order(_createdAt desc) {

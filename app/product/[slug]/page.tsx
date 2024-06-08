@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
+export const dynamic = "force-dynamic";
 const components: PortableTextComponents = {
   marks: {
     // Ex. 1: custom renderer for the em / italics decorator
@@ -93,7 +94,7 @@ async function getRelatedData() {
   return data;
 }
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function ProductPge({ params }: { params: { slug: string } }) {
   const data: any = await getData(params.slug);

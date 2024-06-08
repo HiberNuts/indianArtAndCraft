@@ -3,6 +3,7 @@ import { client, urlFor } from "../lib/sanity";
 import Link from "next/link";
 import DropDownElements from "./DropDownElements";
 
+export const dynamic = "force-dynamic";
 async function getData() {
   const query = "*[_type == 'heroImagee'][0]";
 

@@ -4,6 +4,7 @@ import { client } from "../lib/sanity";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
 async function getData() {
   const query = `*[_type == "product"][0...8] | order(_createdAt desc) {
         _id,

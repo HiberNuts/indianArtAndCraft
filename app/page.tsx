@@ -14,7 +14,7 @@ import {
 import SwiperGallery from "../app/components/SwiperGallery";
 import { client } from "./lib/sanity";
 import { simplifiedProduct } from "./interface";
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 async function getData() {
   const query = `*[_type == "product"] | order(_createdAt desc) {
