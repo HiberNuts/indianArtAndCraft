@@ -9,14 +9,13 @@ import {
 import { client } from "../lib/sanity";
 import DropDownElements from "./DropDownElements";
 
+export const dynamic = "force-dynamic";
 async function getData() {
   const query = `*[_type == 'mastercategory']`;
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, { cache: "no-store" });
 
   return data;
 }
-
-export const dynamic = "force-dynamic";
 
 export async function DropdownMeu() {
   const dataa = await getData();

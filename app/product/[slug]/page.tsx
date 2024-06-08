@@ -39,6 +39,8 @@ const components: PortableTextComponents = {
     h3: ({ children }) => <h3 className="text-l">{children}</h3>,
     h4: ({ children }) => <h4 className="text-base">{children}</h4>,
     h5: ({ children }) => <h5 className="text-xs">{children}</h5>,
+    bold: ({ children }) => <span className="font-bold">{children}</span>,
+    strong: ({ children }) => <span className="font-bold">{children}</span>,
     blockquote: ({ children }) => <blockquote className="border-l-purple-500">{children}</blockquote>,
 
     // Ex. 2: rendering custom styles
@@ -71,7 +73,7 @@ async function getData(slug: string) {
           price_id
       }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, { cache: "no-store" });
   return data;
 }
 
@@ -86,7 +88,7 @@ async function getRelatedData() {
           "imageUrl": images[0].asset->url
       }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, { cache: "no-store" });
 
   return data;
 }
@@ -95,7 +97,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ProductPge({ params }: { params: { slug: string } }) {
   const data: any = await getData(params.slug);
-  console.log(data.content);
+  console.log(data.content[3].children);
 
   const Relateddata: simplifiedProduct[] = await getRelatedData();
 

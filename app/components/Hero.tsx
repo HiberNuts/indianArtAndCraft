@@ -6,7 +6,7 @@ import DropDownElements from "./DropDownElements";
 async function getData() {
   const query = "*[_type == 'heroImagee'][0]";
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query,{ cache: "no-store" });
 
   return data;
 }

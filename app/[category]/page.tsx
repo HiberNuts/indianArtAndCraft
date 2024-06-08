@@ -14,7 +14,7 @@ async function getData(cateogry: string) {
         "imageUrl": images[0].asset->url
     }`;
 
-    const data = await client.fetch(query);
+    const data = await client.fetch(query,{ cache: "no-store" });
 
     return data;
   } else {
@@ -27,7 +27,7 @@ async function getData(cateogry: string) {
         "categoryName": category->name
     }`;
 
-    const data = await client.fetch(query);
+    const data = await client.fetch(query,{ cache: "no-store" });
 
     return data;
   }
