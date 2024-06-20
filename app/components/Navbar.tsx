@@ -15,7 +15,13 @@ const menus = [
 export default function Navbar() {
   // const { handleCartClick } = useShoppingCart();
   return (
-    <div className="flex justify-between w-full  bg-primary py-6">
+    <div
+      className="flex justify-between w-full bg-primary py-6"
+      style={{
+        backgroundImage:
+          "url('https://images.pexels.com/photos/172289/pexels-photo-172289.jpeg?auto=compress&cs=tinysrgb&w=600')",
+      }}
+    >
       <div className="flex items-center w-full  justify-between px-4 ">
         <Link href="/">
           <h1 className="text-2xl text-white md:text-4xl font-bold india">

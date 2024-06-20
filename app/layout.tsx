@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <FooterTitle style={{ color: "white" }} title="Contact Us" />
                     <FooterLinkGroup col>
                       <FooterLink style={{ color: "white" }} href="tel:+919915907188">
-                        +91 9915907188
+                        +91 7743047884
                       </FooterLink>
                       <FooterLink style={{ color: "white" }} href="mailto:info@indiaartandcraft.com">
                         info@indiaartandcraft.com
