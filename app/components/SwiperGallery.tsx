@@ -40,7 +40,7 @@ const SwiperGallery = ({ data }: any) => {
                   key={index}
                   src={product.imageUrl}
                   alt="Product image"
-                  className="object-contain overflow-hidden"
+                  className="object-fit overflow-hidden"
                 />
               </SwiperSlide>
             </div>

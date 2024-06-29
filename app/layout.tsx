@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <ShoppingCartModal />
           {children}
-          <Footer style={{ backgroundColor: "#7c3aed" }} container>
+          <Footer style={{ backgroundColor: "#8B5A2B" }} container>
             <div className="w-full bg-primary !text-white ">
               <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
                 <div>

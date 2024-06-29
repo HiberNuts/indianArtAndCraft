@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 const components: PortableTextComponents = {
   marks: {
     // Ex. 1: custom renderer for the em / italics decorator
@@ -45,7 +45,7 @@ const components: PortableTextComponents = {
     blockquote: ({ children }) => <blockquote className="border-l-purple-500">{children}</blockquote>,
 
     // Ex. 2: rendering custom styles
-    customHeading: ({ children }) => <h2 className="text-lg text-primary text-purple-700">{children}</h2>,
+    customHeading: ({ children }) => <h2 className="text-lg text-primary ">{children}</h2>,
   },
   listItem: {
     // Ex. 1: customizing common list types
@@ -98,7 +98,7 @@ async function getRelatedData() {
 
 export default async function ProductPge({ params }: { params: { slug: string } }) {
   const data: any = await getData(params.slug);
-  console.log(data.content[3].children);
+  console.log(data.content[3]?.children);
 
   const Relateddata: simplifiedProduct[] = await getRelatedData();
 
@@ -116,9 +116,9 @@ export default async function ProductPge({ params }: { params: { slug: string } 
               <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">{data?.name}</h2>
             </div>
             <div className="mb-6 flex items-center gap-3 md:mb-10">
-              <Button className="rounded-full gap-x-2">
-                <span className="text-sm">{x}</span>
-                <Star className="h-5 w-5" />
+              <Button className="rounded-full gap-x-2 text-white">
+                <span className="text-sm text-white">{x}</span>
+                <Star className="h-5 w-5 text-white" />
               </Button>
 
               {/* <span className="text-sm text-gray-500 transition duration-100">56 Ratings</span> */}

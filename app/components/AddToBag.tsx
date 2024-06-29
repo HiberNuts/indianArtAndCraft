@@ -75,7 +75,7 @@ export default function AddToBag({ currency, image, name, price, price_id, sizeD
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <Button>Get Quote</Button>
+          <Button className="text-white">Get Quote</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
